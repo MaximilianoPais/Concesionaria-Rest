@@ -1,32 +1,27 @@
-Concesionaria REST APi
-
-
-
-
-
+Concesionaria REST API
 
 API RESTful para consultar, filtrar, ordenar y actualizar motos de una concesionaria.
-Todos los endpoints retornan datos en formato JSON.
+Todos los endpoints devuelven datos en formato JSON.
 
-Indice
+📚 Índice
 
-Base URL
+📌 Base URL
 
-Endpoints
+🚀 Endpoints
 
-Listar todas las motos
+🏍️ Listar todas las motos
 
-Filtrar motos por categoria
+🎯 Filtrar por categoría
 
-Ordenar motos por un campo
+🔽 Ordenar motos
 
-Filtrar y ordenar
+🔍 Filtrar + ordenar
 
-Obtener una moto por id
+🔎 Obtener moto por ID
 
-Actualizar una moto
+✏️ Actualizar una moto
 
-Parametros disponibles
+⚙️ Parámetros disponibles
 
 Base URL
 http://localhost/concesionaria-Rest/api/
@@ -36,14 +31,14 @@ Endpoints
 
 GET /motos
 
-Descripcion
+Descripción
 
-Devuelve el listado completo de motos registradas en la base de datos.
+Devuelve el listado completo de motos registradas.
 
 Ejemplo
 GET http://localhost/concesionaria-Rest/api/motos
 
-Respuesta esperada (ejemplo)
+Respuesta
 [
   {
     "id": 1,
@@ -55,13 +50,9 @@ Respuesta esperada (ejemplo)
   }
 ]
 
-2. Filtrar motos por categoria
+2. Filtrar motos por categoría
 
 GET /motos?tipo={categoria}
-
-Descripcion
-
-Permite traer solo las motos pertenecientes a una categoria especifica.
 
 Ejemplo
 GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro
@@ -70,29 +61,22 @@ GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro
 
 GET /motos?orderBy={campo}&direction={ASC|DESC}
 
-Descripcion
-
-Ordena la lista de motos por cualquier campo valido:
-precio, modelo, id_tipo, etc.
-
 Ejemplos
-Orden ascendente
+
+Ascendente:
+
 GET http://localhost/concesionaria-Rest/api/motos?orderBy=precio&direction=ASC
 
-Orden descendente
+
+Descendente:
+
 GET http://localhost/concesionaria-Rest/api/motos?orderBy=precio&direction=DESC
 
-4. Filtrar y ordenar
-
-Se pueden combinar filtros y ordenamientos en un mismo request.
-
+4. Filtrar + ordenar
 Ejemplo
-
-Traer solo motos enduro, ordenadas por precio descendente:
-
 GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro&orderBy=precio&direction=DESC
 
-5. Obtener una moto por id
+5. Obtener una moto por ID
 
 GET /motos/{id}
 
@@ -103,13 +87,6 @@ GET http://localhost/concesionaria-Rest/api/motos/2
 
 PUT /motos/{id}
 
-Descripcion
-
-Actualiza los datos de una moto. Enviar el body como JSON.
-
-Ejemplo
-PUT http://localhost/concesionaria-Rest/api/motos/2
-
 Body JSON
 {
   "modelo": "XR 150 superActualizada",
@@ -118,11 +95,11 @@ Body JSON
   "id_tipo": 2
 }
 
-Respuesta esperada
+Respuesta
 { "message": "Moto actualizada correctamente" }
 
-Parametros disponibles
-Parametro	Tipo	Descripcion
-tipo	string	Filtra motos por categoria
-orderBy	string	Campo por el cual ordenar (precio, modelo, etc.)
-direction	string	Direccion del orden (ASC o DESC)
+Parámetros disponibles
+Parámetro	Tipo	Descripción
+tipo	string	Filtra por categoría
+orderBy	string	Campo por el cual ordenar
+direction	string	Dirección del orden (ASC o DESC)
