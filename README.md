@@ -46,14 +46,51 @@ Devuelve el listado completo de motos registradas.
 
 ``` json
 [
-  {
-    "id": 1,
-    "modelo": "XR 150",
-    "precio": 1400000,
-    "caracteristicas": "Enduro liviana",
-    "id_tipo": 2,
-    "categoria_nombre": "enduro"
-  }
+    {
+        "id_moto": 1,
+        "modelo": "Honda XR150L",
+        "precio": "3200000.00",
+        "caracteristicas": "Motor monocilíndrico 149cc, arranque eléctrico y a pedal, freno delantero a disco.",
+        "id_tipo": 1,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Do4iNgT5kb-Y7zC3KKNWy-X1ut8G0MHMiA&s",
+        "categoria_nombre": "Enduro"
+    },
+    {
+        "id_moto": 2,
+        "modelo": "xr 150 superActualizada",
+        "precio": "0.00",
+        "caracteristicas": "343434",
+        "id_tipo": 2,
+        "imagen": "https://yamaha-mundoyamaha.com/wp-content/uploads/2023/08/xtz250_blanco.png",
+        "categoria_nombre": "Calle"
+    },
+    {
+        "id_moto": 4,
+        "modelo": "Honda Tornado 250",
+        "precio": "5200000.00",
+        "caracteristicas": "Motor 249cc DOHC, refrigeración por aire, caja de 6 velocidades, gran rendimiento off-road.",
+        "id_tipo": 1,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmOFehEopC65x2W-Ut-V9JhP9ImKIj9_xDhg&s",
+        "categoria_nombre": "Enduro"
+    },
+    {
+        "id_moto": 5,
+        "modelo": "Yamaha YZF R3",
+        "precio": "8500000.00",
+        "caracteristicas": "Motor bicilíndrico 321cc, refrigeración líquida, 42 HP, frenos ABS, diseño deportivo.",
+        "id_tipo": 4,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp7I1OPaVZsLhiqm1dtLN77G5A68mlQUNa_A&s",
+        "categoria_nombre": "Deportiva"
+    },
+    {
+        "id_moto": 6,
+        "modelo": "Bajaj Rouser NS200",
+        "precio": "4100000.00",
+        "caracteristicas": "Motor 199.5cc, 6 velocidades, encendido digital, diseño naked con gran maniobrabilidad.",
+        "id_tipo": 3,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzxOzvRbRZxBxdknqmbNkS7e3Z47m4iBMwoA&s",
+        "categoria_nombre": "Naked"
+    }
 ]
 ```
 
