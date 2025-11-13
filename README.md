@@ -1,4 +1,4 @@
-🚀 Concesionaria REST API
+Concesionaria REST APi
 
 
 
@@ -8,7 +8,7 @@
 API RESTful para consultar, filtrar, ordenar y actualizar motos de una concesionaria.
 Todos los endpoints retornan datos en formato JSON.
 
-📚 Índice
+Indice
 
 Base URL
 
@@ -16,34 +16,34 @@ Endpoints
 
 Listar todas las motos
 
-Filtrar por categoría
+Filtrar motos por categoria
 
-Ordenar motos
+Ordenar motos por un campo
 
-Filtrar + ordenar
+Filtrar y ordenar
 
-Obtener moto por ID
+Obtener una moto por id
 
-Actualizar moto
+Actualizar una moto
 
-Parámetros disponibles
+Parametros disponibles
 
-🌐 Base URL
+Base URL
 http://localhost/concesionaria-Rest/api/
 
-📦 Endpoints
-1️⃣ Listar todas las motos
+Endpoints
+1. Listar todas las motos
 
 GET /motos
 
-📝 Descripción
+Descripcion
 
 Devuelve el listado completo de motos registradas en la base de datos.
 
-📌 Ejemplo
+Ejemplo
 GET http://localhost/concesionaria-Rest/api/motos
 
-📥 Respuesta esperada (ejemplo)
+Respuesta esperada (ejemplo)
 [
   {
     "id": 1,
@@ -55,62 +55,62 @@ GET http://localhost/concesionaria-Rest/api/motos
   }
 ]
 
-2️⃣ Filtrar motos por categoría
+2. Filtrar motos por categoria
 
 GET /motos?tipo={categoria}
 
-📝 Descripción
+Descripcion
 
-Permite traer solo las motos pertenecientes a una categoría específica.
+Permite traer solo las motos pertenecientes a una categoria especifica.
 
-📌 Ejemplo
+Ejemplo
 GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro
 
-3️⃣ Ordenar motos por un campo
+3. Ordenar motos por un campo
 
 GET /motos?orderBy={campo}&direction={ASC|DESC}
 
-📝 Descripción
+Descripcion
 
-Ordena la lista de motos por cualquier campo válido:
+Ordena la lista de motos por cualquier campo valido:
 precio, modelo, id_tipo, etc.
 
-📌 Ejemplos
-🔼 Orden ascendente
+Ejemplos
+Orden ascendente
 GET http://localhost/concesionaria-Rest/api/motos?orderBy=precio&direction=ASC
 
-🔽 Orden descendente
+Orden descendente
 GET http://localhost/concesionaria-Rest/api/motos?orderBy=precio&direction=DESC
 
-4️⃣ Filtrar + ordenar
+4. Filtrar y ordenar
 
-Se pueden combinar filtros y ordenamientos.
+Se pueden combinar filtros y ordenamientos en un mismo request.
 
-📌 Ejemplo
+Ejemplo
 
 Traer solo motos enduro, ordenadas por precio descendente:
 
 GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro&orderBy=precio&direction=DESC
 
-5️⃣ Obtener una moto por ID
+5. Obtener una moto por id
 
 GET /motos/{id}
 
-📌 Ejemplo
+Ejemplo
 GET http://localhost/concesionaria-Rest/api/motos/2
 
-6️⃣ Actualizar una moto
+6. Actualizar una moto
 
 PUT /motos/{id}
 
-📝 Descripción
+Descripcion
 
 Actualiza los datos de una moto. Enviar el body como JSON.
 
-📌 Ejemplo
+Ejemplo
 PUT http://localhost/concesionaria-Rest/api/motos/2
 
-📦 Body JSON
+Body JSON
 {
   "modelo": "XR 150 superActualizada",
   "precio": 343434,
@@ -118,11 +118,11 @@ PUT http://localhost/concesionaria-Rest/api/motos/2
   "id_tipo": 2
 }
 
-📥 Respuesta esperada
+Respuesta esperada
 { "message": "Moto actualizada correctamente" }
 
-⚙ Parámetros disponibles
-Parámetro	Tipo	Descripción
-tipo	string	Filtra motos por categoría
+Parametros disponibles
+Parametro	Tipo	Descripcion
+tipo	string	Filtra motos por categoria
 orderBy	string	Campo por el cual ordenar (precio, modelo, etc.)
-direction	string	Dirección del orden (ASC o DESC)
+direction	string	Direccion del orden (ASC o DESC)
