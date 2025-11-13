@@ -1,44 +1,50 @@
-Concesionaria REST API
+# Concesionaria REST API
 
-API RESTful para consultar, filtrar, ordenar y actualizar motos de una concesionaria.
-Todos los endpoints devuelven datos en formato JSON.
+API RESTful para consultar, filtrar, ordenar y actualizar motos de una
+concesionaria.\
+Todos los endpoints devuelven datos en **formato JSON**.
 
-📚 Índice
+------------------------------------------------------------------------
 
-📌 Base URL
+## 📚 Índice
 
-🚀 Endpoints
+-   📌 [Base URL](#base-url)\
+-   🚀 [Endpoints](#endpoints)
+    -   🏍️ [Listar todas las motos](#1-listar-todas-las-motos)\
+    -   🎯 [Filtrar por categoría](#2-filtrar-motos-por-categoría)\
+    -   🔽 [Ordenar motos](#3-ordenar-motos-por-un-campo)\
+    -   🔍 [Filtrar + ordenar](#4-filtrar--ordenar)\
+    -   🔎 [Obtener moto por ID](#5-obtener-una-moto-por-id)\
+    -   ✏️ [Actualizar una moto](#6-actualizar-una-moto)\
+-   ⚙️ [Parámetros disponibles](#parámetros-disponibles)
 
-🏍️ Listar todas las motos
+------------------------------------------------------------------------
 
-🎯 Filtrar por categoría
+## Base URL
 
-🔽 Ordenar motos
+    http://localhost/concesionaria-Rest/api/
 
-🔍 Filtrar + ordenar
+------------------------------------------------------------------------
 
-🔎 Obtener moto por ID
+# Endpoints
 
-✏️ Actualizar una moto
+------------------------------------------------------------------------
 
-⚙️ Parámetros disponibles
+## 1. Listar todas las motos
 
-Base URL
-http://localhost/concesionaria-Rest/api/
+**GET `/motos`**
 
-Endpoints
-1. Listar todas las motos
-
-GET /motos
-
-Descripción
+### Descripción
 
 Devuelve el listado completo de motos registradas.
 
-Ejemplo
-GET http://localhost/concesionaria-Rest/api/motos
+### Ejemplo
 
-Respuesta
+    GET http://localhost/concesionaria-Rest/api/motos
+
+### Respuesta
+
+``` json
 [
   {
     "id": 1,
@@ -49,57 +55,85 @@ Respuesta
     "categoria_nombre": "enduro"
   }
 ]
+```
 
-2. Filtrar motos por categoría
+------------------------------------------------------------------------
 
-GET /motos?tipo={categoria}
+## 2. Filtrar motos por categoría
 
-Ejemplo
-GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro
+**GET `/motos?tipo={categoria}`**
 
-3. Ordenar motos por un campo
+### Ejemplo
 
-GET /motos?orderBy={campo}&direction={ASC|DESC}
+    GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro
 
-Ejemplos
+------------------------------------------------------------------------
 
-Ascendente:
+## 3. Ordenar motos por un campo
 
-GET http://localhost/concesionaria-Rest/api/motos?orderBy=precio&direction=ASC
+**GET `/motos?orderBy={campo}&direction={ASC|DESC}`**
 
+### Ejemplos
 
-Descendente:
+**Ascendente:**
 
-GET http://localhost/concesionaria-Rest/api/motos?orderBy=precio&direction=DESC
+    GET http://localhost/concesionaria-Rest/api/motos?orderBy=precio&direction=ASC
 
-4. Filtrar + ordenar
-Ejemplo
-GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro&orderBy=precio&direction=DESC
+**Descendente:**
 
-5. Obtener una moto por ID
+    GET http://localhost/concesionaria-Rest/api/motos?orderBy=precio&direction=DESC
 
-GET /motos/{id}
+------------------------------------------------------------------------
 
-Ejemplo
-GET http://localhost/concesionaria-Rest/api/motos/2
+## 4. Filtrar + ordenar
 
-6. Actualizar una moto
+### Ejemplo
 
-PUT /motos/{id}
+    GET http://localhost/concesionaria-Rest/api/motos?tipo=enduro&orderBy=precio&direction=DESC
 
-Body JSON
+------------------------------------------------------------------------
+
+## 5. Obtener una moto por ID
+
+**GET `/motos/{id}`**
+
+### Ejemplo
+
+    GET http://localhost/concesionaria-Rest/api/motos/2
+
+------------------------------------------------------------------------
+
+## 6. Actualizar una moto
+
+**PUT `/motos/{id}`**
+
+### Body JSON
+
+``` json
 {
   "modelo": "XR 150 superActualizada",
   "precio": 343434,
   "caracteristicas": "bien superActualizada",
   "id_tipo": 2
 }
+```
 
-Respuesta
+### Respuesta
+
+``` json
 { "message": "Moto actualizada correctamente" }
+```
 
-Parámetros disponibles
-Parámetro	Tipo	Descripción
-tipo	string	Filtra por categoría
-orderBy	string	Campo por el cual ordenar
-direction	string	Dirección del orden (ASC o DESC)
+------------------------------------------------------------------------
+
+## Parámetros disponibles
+
+  -----------------------------------------------------------------------
+  Parámetro     Tipo       Descripción
+  ------------- ---------- ----------------------------------------------
+  tipo          string     Filtra por categoría
+
+  orderBy       string     Campo por el cual ordenar
+
+  direction     string     Dirección del orden (`ASC` o `DESC`)
+  -----------------------------------------------------------------------
